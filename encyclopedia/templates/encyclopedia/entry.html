@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block nav %}
+     {% comment %} <form action="{% url 'wiki:edit' %}" method="get">
+        <input hidden="true" value="{{ entry }}" name="title">
+    </form> {% endcomment %}
+    {% comment %} <a href="/edit/{{ entry }}">Edit Page</a>  {% endcomment %}
+    <a href="{% url 'wiki:edit' %}">Edit Page</a>     
+{% endblock %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+{{ entryBody|safe }}
+
+
+{% endblock %}
